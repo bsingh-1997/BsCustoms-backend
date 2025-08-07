@@ -6,6 +6,12 @@ const mongoose = require("mongoose");
 dotenv.config();
 
 const app = express();
+app.use(
+  cors({
+    origin: 'http://localhost:3000', // allow localhost during dev
+    credentials: true, // allow cookies if you're using them
+  })
+);
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/order");
@@ -15,12 +21,6 @@ const salesdata = require("./routes/salesdata");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(cors());
-app.use(
-  cors({
-    origin: 'http://localhost:3000', // allow localhost during dev
-    credentials: true, // allow cookies if you're using them
-  })
-);
 
 // app.use("/api/admin", adminRoutes);
 
