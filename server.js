@@ -14,7 +14,13 @@ const salesdata = require("./routes/salesdata");
 // const orderRoutes = require("./routes/order");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: 'http://localhost:3000', // allow localhost during dev
+    credentials: true, // allow cookies if you're using them
+  })
+);
 
 // app.use("/api/admin", adminRoutes);
 
