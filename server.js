@@ -8,9 +8,9 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
+    origin: 'https://bs-customs-frontend.vercel.app', // allow localhost during dev
     // origin: 'https://bs-customs-frontend.vercel.app', // allow localhost during dev
-    // origin: 'https://bs-customs-frontend.vercel.app', // allow localhost during dev
-    origin: 'http://localhost:3000', // allow localhost during dev
+    // origin: 'http://localhost:3000', // allow localhost during dev
     credentials: true, // allow cookies if you're using them
   })
 );
